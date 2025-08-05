@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap");
+@import "tailwindcss";
+
+:root {
+  min-width: 320px;
+  font-family: Mozilla Headline;
+  line-height: 1.5; 
+  font-weight: 500;
+
+  color-scheme: light dark;
+  color: oklch(14.7% 0.004 49.25);  
+  background-color: oklch(97.3% 0.071 103.193);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shadow-sharp{
+  box-shadow: 4px 4px 0 oklch(14.7% 0.004 49.25);
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .shadow-sharp{
+    box-shadow: 5px 5px 0 oklch(14.7% 0.004 49.25);
+  }
+}
+@media screen and (min-width: 1024px){
+  .shadow-sharp{
+    box-shadow: 6px 6px 0 oklch(14.7% 0.004 49.25);
+  }
+}
+
+.inner-shadow-sharp {
+  box-shadow: inset 2px 2px 0 oklch(14.7% 0.004 49.25);
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .inner-shadow-sharp {
+    box-shadow: inset 3px 3px 0 oklch(14.7% 0.004 49.25);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .inner-shadow-sharp {
+    box-shadow: inset 4px 4px 0 oklch(14.7% 0.004 49.25);
+  }
+}
