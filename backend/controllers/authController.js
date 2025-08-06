@@ -31,7 +31,7 @@ exports.login = async (req, res) => {
         if (!passMatch) return res.status(400).json({message: 'Invalid credentials'});
 
         const token = jwt.sign(
-            {id: user._id, email: user.email},
+            {id: userExists._id, email: userExists.email},
             JWT_SECRET,
             {expiresIn: '7d'},
         );
@@ -40,8 +40,9 @@ exports.login = async (req, res) => {
             message: 'Login successful',
             token,
             user: {
-                id: user._id,
-                name: user.name,
+                id: userExists._id,
+                name: userExists.name,
+                email: userExists.email
             }
         });
     } catch(err){
@@ -80,7 +81,7 @@ exports.updateProfile = async (req, res) => {
             return res.status(404).json({message: 'User not found'});
         }
 
-        if(password) {
+        if(password || email) {
             res.status(200).json({message: 'User profile updated', user: updatedUser, forceLogout: true})
         } else{
             res.status(200).json({message: 'User profile updated', user: updatedUser, forceLogout: false})

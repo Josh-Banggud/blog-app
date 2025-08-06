@@ -37,7 +37,7 @@ exports.dislikePost = async (req, res) => {
                 await Reaction.deleteOne({_id: dislikeExists._id});
                 return res.json({message: 'Dislike removed'});
             }else{
-                dislikeExists.type = 'like';
+                dislikeExists.type = 'dislike';
                 await dislikeExists.save();
                 return res.json({message: 'Post disliked'});
             }

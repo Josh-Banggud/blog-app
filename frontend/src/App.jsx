@@ -11,12 +11,13 @@ function App() {
   const hiddenLayoutPaths = ['/auth/login', '/auth/signup'];
   const shouldHideLayout = hiddenLayoutPaths.includes(location.pathname);
 
-
   return (
     <>
-      <div className='flex flex-col items-center'>
+      <div className='relative min-h-screen flex flex-col items-center'>
         {!shouldHideLayout && <Header/>}
-        <AppRoutes/>
+        <main className="flex-grow">
+          <AppRoutes/>
+        </main>
         {!shouldHideLayout && <Footer/>}
       </div>
     </>

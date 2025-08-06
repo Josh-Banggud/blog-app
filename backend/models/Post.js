@@ -8,6 +8,7 @@ const PostSchema = new mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    status: { type: String, enum: ['draft', 'published'], default: 'draft' },
     isDeleted: {type: Boolean, default: false},
 }, {timestamps: true});
 
